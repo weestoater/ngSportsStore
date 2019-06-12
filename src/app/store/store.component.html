@@ -1,3 +1,16 @@
 <div class="row">
-  <div class="col bg-dark text-white">SPORTS STORE</div>
+  <div class="col bg-dark text-white"><h2>SPORTS STORE</h2></div>
+</div>
+<div class="row">
+  <div class="col-sm-3 bg-info p-2">Categories<br />{{ categories.length }} </div>
+  <div class="col-sm-9 p-2">
+    <div class="card m-1 p-1 bg-light" *ngFor="let product of products">
+      <h4>{{ product.name }}
+      <span class="badge badge-pill badge-primary float-right">
+        {{ product.price | currency:"GBP":"symbol":"2.2-2" }}
+      </span>
+    </h4>
+    <div class="card-text bg-white p-1">{{ product.description }} </div>
+    </div>
+  </div>
 </div>
