@@ -1,46 +1,46 @@
-<div class="container-fluid">
-  <div class="row">
-    <div class="col bg-dark text-white">
-      <a class="navbar-brand checkout-brand">SPORTS STORE</a>
+<div class='container-fluid'>
+  <div class='row'>
+    <div class='col bg-dark text-white'>
+      <a class='navbar-brand checkout-brand'>SPORTS STORE</a>
       <cart-summary></cart-summary>
     </div>
   </div>
-  <div class="row">
+  <div class='row'>
 
-    <div class="col-sm-2 py-3">
-      <button class="btn btn-block btn-outline-primary" (click)="changeCategory()"> Home </button>
-      <button *ngFor="let cat of categories" class="btn btn-outline-primary btn-block" [class.active]="cat == selectedCategory" (click)="changeCategory(cat)">
+    <div class='col-sm-2 py-3'>
+      <button class='btn btn-block btn-outline-primary' (click)='changeCategory()'> Home </button>
+      <button *ngFor='let cat of categories' class='btn btn-outline-primary btn-block' [class.active]='cat == selectedCategory' (click)='changeCategory(cat)'>
         {{cat}}
       </button>
     </div>
 
-    <div class="col-sm-10 py-2">
-      <div class="row">
-          <div *ngFor="let product of products" class="col-sm-6">
-              <div class="card border-secondary mb-2">
-                <div class="card-header">{{product.name}} <span class="badge badge-pill badge-primary float-right"> {{ product.price | currency:"GBP":"symbol":"2.2-2" }} </span> </div>
-                <div class="card-body">
+    <div class='col-sm-10 py-2'>
+      <div class='row'>
+          <div *ngFor='let product of products' class='col-sm-6'>
+              <div class='card border-secondary mb-2'>
+                <div class='card-header'>{{product.name}} <span class='badge badge-pill badge-primary float-right'> {{ product.price | currency:'GBP':'symbol':'2.2-2' }} </span> </div>
+                <div class='card-body'>
                     {{product.description}}
-                  <button class="btn btn-success btn-sm float-right ml-3 mt-3" (click)="addProductToCart(product)"><i class="fa fa-cart-plus mr-2"></i> Add To Cart </button>
+                  <button class='btn btn-success btn-sm float-right ml-3 mt-3' (click)='addProductToCart(product)'><i class='fa fa-cart-plus mr-2'></i> Add To Cart </button>
                 </div>
               </div>
             </div>
 
       </div>
-      <div class="row mt-3 border-top">
-        <div class="col-sm-3">
-            <div class="form-inline mt-2">
-                <select class="form-control" [value]="productsPerPage" (change)="changePageSize($event.target.value)">
-                  <option value="6">6 per Page</option>
-                  <option value="8">8 per Page</option>
-                  <option value="10">10 per Page</option>
-                  <option value="15">15 per Page</option>
+      <div class='row mt-3 border-top'>
+        <div class='col-sm-3'>
+            <div class='form-inline mt-2'>
+                <select class='form-control' [value]='productsPerPage' (change)='changePageSize($event.target.value)'>
+                  <option value='6'>6 per Page</option>
+                  <option value='8'>8 per Page</option>
+                  <option value='10'>10 per Page</option>
+                  <option value='15'>15 per Page</option>
                 </select>
               </div>
         </div>
-        <div class="col-sm-9">
-          <div class="btn-group float-right mt-2">
-            <button *counter="let page of pageCount" (click)="changePage(page)" class="btn btn-outline-primary" [class.active]="page == selectedPage"> {{page}} </button>
+        <div class='col-sm-9'>
+          <div class='btn-group float-right mt-2'>
+            <button *counter='let page of pageCount' (click)='changePage(page)' class='btn btn-outline-primary' [class.active]='page == selectedPage'> {{page}} </button>
           </div>
         </div>
       </div>
